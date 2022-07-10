@@ -1,5 +1,6 @@
 package arquivosProjeto.one.digitalinnovation.gof;
 
+import arquivosProjeto.one.digitalinnovation.gof.facade.Facade;
 import arquivosProjeto.one.digitalinnovation.gof.singleton.SingletonEager;
 import arquivosProjeto.one.digitalinnovation.gof.singleton.SingletonLazy;
 import arquivosProjeto.one.digitalinnovation.gof.singleton.SingletonLazyHolder;
@@ -8,7 +9,7 @@ import arquivosProjeto.one.digitalinnovation.gof.strategy.*;
 public class Teste {
     public static void main(String[] args) {
 
-        //Singleton
+        // Singleton
 
         SingletonLazy lazy = SingletonLazy.getInstancia();
         System.out.println(lazy);
@@ -29,7 +30,9 @@ public class Teste {
         lazyHolder = SingletonLazyHolder.getInstancia();
         System.out.println(lazyHolder);
 
-        //Strategy
+        System.out.println(" ");
+
+        // Strategy
 
         Comportamento normal = new ComportamentoNormal();
         Comportamento defensivo = new ComportamentoDefensivo();
@@ -45,6 +48,13 @@ public class Teste {
         robo.mover();
         robo.mover();
         robo.mover();
+
+        System.out.println(" ");
+
+        // Facade
+
+        Facade facade = new Facade();
+        facade.migrarCliente("NomeQualquer","99999999");
     }
 }
 
